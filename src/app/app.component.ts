@@ -11,6 +11,19 @@ import { MatPaginator } from '@angular/material/paginator';
 export class AppComponent {
   title = 'restTest1';
 
+  displayedColumns = ['date', 'ledger', 'amount', 'company'];
+  dataSource = new MatTableDataSource<Element>(undefined);
+
+  @ViewChild(MatPaginator)
+    paginator!: MatPaginator;
+
+  /**
+   * Set the paginator after the view init since this component will
+   * be able to query its view for the initialized paginator.
+   */
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
  
 }
 
