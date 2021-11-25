@@ -1,15 +1,15 @@
+/** Data Service to make the code reusable in angular.*/
+
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { DataModal } from 'src/modal/data.interface';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-
-
-export interface TransactionData{
+export interface TransactionData {
   transactions: DataModal[],
-  totalCount : number,
-  page : number
+  totalCount: number,
+  page: number
 };
 
 @Injectable({
@@ -19,13 +19,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  findAll(page: number): Observable<TransactionData> {
-    let params = new HttpParams();
-    
-   
+  /**Main api end point to call the GET method and fetch the transcations as per the page request.*/
 
-    return this.http.get('https://resttest.bench.co/transactions/' + page +'.json' ).pipe(
+  findAll(page: number): Observable<TransactionData> {
+    return this.http.get('https://resttest.bench.co/transactions/' + page + '.json').pipe(
       map((transData: any) => transData),
+      /** Catching the error from server side or network related. */
       catchError(err => throwError(err))
     )
   }

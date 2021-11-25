@@ -7,7 +7,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -20,8 +19,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatTableModule,
     MatPaginatorModule,
     HttpClientModule,
-    AppRoutingModule,
-    MatToolbarModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
