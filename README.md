@@ -1,9 +1,10 @@
 # RestTest1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3. 
+Run 'npm install' in the root folder path of an application.
 
 ## Development server
-
+Go to src path of the angular application.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
