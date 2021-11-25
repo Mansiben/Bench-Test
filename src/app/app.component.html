@@ -8,27 +8,29 @@
           <mat-cell *matCellDef="let row">{{row.Date}}</mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="ledger">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Ledger</mat-header-cell>
+      <ng-container matColumnDef="company">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Company</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.Company}}</mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="account">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Account</mat-header-cell>
           <mat-cell *matCellDef="let row">{{row.Ledger}}</mat-cell>
       </ng-container>
 
 
       <ng-container matColumnDef="amount">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Amount</mat-header-cell>
-          <mat-cell *matCellDef="let row">{{row.Amount}}</mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>{{sum | currency}}</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.Amount | currency}}</mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="company">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Company</mat-header-cell>
-          <mat-cell *matCellDef="let row">{{row.Company}}</mat-cell>
-      </ng-container>
+     
   </mat-table>
 
   <mat-paginator 
                 [length]="38" 
                  [pageSize]="10"
-                 [pageSizeOptions]="[5, 10, 20, 50]"
+               
                  (page)="pageEvent = $event; onPaginateChange($event)"
         showFirstLastButtons>
   </mat-paginator>
